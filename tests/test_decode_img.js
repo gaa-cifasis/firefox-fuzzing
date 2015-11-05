@@ -60,24 +60,4 @@ dump(5);
 var outParam = { value: null };
 imgTools.decodeImageData(istream, inMimeType, outParam);
 var img = outParam.value;
-
-
-//Components.classes["@mozilla.org/gfx/region;1"].createInstance(Components.interfaces.nsIScriptableRegion).init()
-
-
-var canvas = Cc["@mozilla.org/xul/xul-document;1"].createInstance(Ci.nsIDOMDocument).implementation.createDocument("http://www.w3.org/1999/xhtml", "html", null).createElementNS("http://www.w3.org/1999/xhtml", "canvas");
-//canvas = canvas.QueryInterface(Components.interfaces.nsIDOMHTMLCanvasElement);
-canvas.setAttribute("height", 32);
-canvas.setAttribute("width", 32);
-
-dump(7);
-
-var context = canvas.getContext('2d');
-context.drawImage(img, 0, 0);
-
-dump(8);
-
-
-
-//imgTools.encodeScaledImage(container, "image/bmp", 16, 16)
-dump('\n');
+dump(img);

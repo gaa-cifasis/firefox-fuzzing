@@ -66,15 +66,6 @@ var file = new FileUtils.File(imgName);
 dump(3);
 //var data = "";
 
-//Components.utils.import("resource://gre/modules/NetUtil.jsm");
-//NetUtil.asyncFetch(file, function(inputStream, status) {
-  // The file data is contained within inputStream.
-  // You can read it into a string with
-  //var data = NetUtil.readInputStreamToString(inputStream, inputStream.available());
-//});
-
-
-
 var data = "";
 var fstream = Components.classes["@mozilla.org/network/file-input-stream;1"].
               createInstance(Components.interfaces.nsIFileInputStream);
@@ -104,7 +95,7 @@ dump('\n');
 dump(doc);
 var x = doc.getElementsByTagName("audio")[0];
 dump('\n');
-dump(x);
-dump(x.canPlayType("audio/wav"));
+dump(x.src);
+dump(x.canPlayType("audio/ogg"));
 dump(x.play());
 
